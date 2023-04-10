@@ -1,0 +1,26 @@
+<canvas width="600" height="400">
+
+</canvas>
+<script>
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+
+    let cubeSizeX = 350;
+    let cubeSizeY = 300;
+    let eyeSize = 90;
+    let eye1XOffset = 10;
+    let eye1YOffset = 10;
+    let xPosCube = (pantalla.width / 2) - (cubeSizeX / 2);
+    let yPosCube = (pantalla.height / 2) - (cubeSizeY / 2);
+    let xPosEye1 = xPosCube + eye1XOffset;
+    let yPosEye1 = yPosCube + eye1YOffset;
+
+    pincel.fillStyle = "darkgreen";
+    pincel.fillRect(0 + xPosCube, 0 + yPosCube, xPosCube + cubeSizeX, yPosCube + cubeSizeY);
+
+    pincel.fillStyle = "black";
+    pincel.fillRect(xPosEye1, yPosEye1, xPosEye1 + eyeSize, yPosEye1 + eyeSize);
+
+
+
+</script>
