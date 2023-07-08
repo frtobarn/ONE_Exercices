@@ -1,8 +1,8 @@
 package byteBank;
 
-public class Counter extends Official{
+public class Accountant extends Official{
 
-	public Counter(String name, String id, double payment) {
+	public Accountant(String name, String id, double payment) {
 		super(name, id, payment);
 	}
 	

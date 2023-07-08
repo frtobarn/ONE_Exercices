@@ -6,9 +6,9 @@ public abstract class Account {
 	private int id;
 	private Customer owner;
 	private static int totalAccounts;
-	
+
 	public Account() {
-		
+
 	}
 
 	public Account(int agency) {
@@ -59,7 +59,7 @@ public abstract class Account {
 		return Account.totalAccounts;
 	}
 
-	abstract boolean  deposit(double amount);
+	abstract boolean deposit(double amount);
 
 	boolean withdraw(double amount) {
 		if (amount <= this.balance) {

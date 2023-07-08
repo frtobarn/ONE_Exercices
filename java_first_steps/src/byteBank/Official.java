@@ -5,6 +5,10 @@ public abstract class Official {
 	private String id;
 	private double payment;
 
+	public Official() {
+
+	}
+
 	public Official(String name, String id, double payment) {
 		super();
 		this.name = name;

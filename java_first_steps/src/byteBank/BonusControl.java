@@ -2,7 +2,7 @@ package byteBank;
 
 public class BonusControl {
 	private double bonusResume;
-
+ 
 	public double bonusLog(Official official) {
 		this.bonusResume += official.getBonus();
 		System.out.println(this.bonusResume);
@@ -14,7 +14,7 @@ public class BonusControl {
 		return this.bonusResume;
 	}
 
-	public double bonusLog(Counter counter) {
+	public double bonusLog(Accountant counter) {
 		this.bonusResume += counter.getBonus();
 		System.out.println(this.bonusResume);
 		return this.bonusResume;

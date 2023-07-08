@@ -1,26 +1,30 @@
 package byteBank;
 
-public class Gerente extends Official {
+public class Gerente implements Logeable {
 	private String password;
 
+	public Gerente() {
+		super();
+	}
+
 	public Gerente(String name, String id, double payment) {
-		super(name, id, payment);
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
-	// Overwrite. Overwriting a method
-	@Override
 	public double getBonus() {
-		return super.getPayment() + super.getPayment() * 0.05	;
+		return 0.1;
 	}
 
+	@Override
+	public boolean login(String password) {
+		return this.password == password;
+	}
+
+	@Override
 	public void setPassword(String password) {
-		this.password = password;
+		// TODO Auto-generated method stub
+
 	}
 
-	public boolean login(String id, String password) {
-		if (this.getId() == id && this.password == password) {
-			return true;
-		}
-		return false;
-	}
 }
