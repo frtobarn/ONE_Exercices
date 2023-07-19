@@ -1,9 +1,9 @@
-package classes;
+package bytebank;
 
 public abstract class Account {
 	protected double balance;
 	private int agency;
-	private int accountId;
+	private int id;
 	private Customer owner;
 	private static int totalAccounts;
 
@@ -11,7 +11,7 @@ public abstract class Account {
 
 	}
 
-	public Account(int agency, int accountId) {
+	public Account(int agency) {
 		totalAccounts++;
 		System.out.println("A new account has been created: " + this);
 		System.out.println("Accounts created: " + totalAccounts);
@@ -39,11 +39,11 @@ public abstract class Account {
 	}
 
 	public int getId() {
-		return accountId;
+		return id;
 	}
 
 	public void setId(int id) {
-		this.accountId = id;
+		this.id = id;
 	}
 
 	public Customer getOwner() {
@@ -61,22 +61,16 @@ public abstract class Account {
 
 	abstract boolean deposit(double amount);
 
-	public void withdraw(double amount) throws NotEnoughException {
-		if (this.balance < amount) {
-			throw new NotEnoughException("You don't have enough money");
+	boolean withdraw(double amount) {
+		if (amount <= this.balance) {
+			this.balance -= amount;
+			return true;
 		}
-		this.balance -= amount;
+		return false;
 	}
 
 	boolean transfer(double amount, Account accountToTransfer) {
-		if (this.balance >= amount) {
-			try {
-				this.withdraw(amount);
-			} catch (NotEnoughException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			accountToTransfer.deposit(amount);
+		if (this.withdraw(amount) && accountToTransfer.deposit(amount)) {
 			return true;
 		}
 		return false;

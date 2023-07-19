@@ -1,15 +1,15 @@
-package classes;
+package bytebank;
 
 public class NormalAccount extends Account {
 
-	public NormalAccount(int agency, int accountId) {
-		super(agency, accountId);
+	public NormalAccount(int agency) {
+		super(agency);
 	}
 
 	@Override
-	public void withdraw(double amount) throws NotEnoughException {
+	boolean withdraw(double amount) {
 		double commission = 0.2;
-		super.withdraw(amount + commission);
+		return super.withdraw(amount + commission);
 	}
 
 	@Override

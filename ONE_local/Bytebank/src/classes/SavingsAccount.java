@@ -2,11 +2,16 @@ package classes;
 
 public class SavingsAccount extends Account {
 
-	public SavingsAccount(int agency) {
-		super(agency);
+	public SavingsAccount() {
+		super();
 	}
+
+	public SavingsAccount(int agency, int accountId) {
+		super(agency, accountId);
+	}
+
 	@Override
-	public boolean deposit(double amount) { 
+	public boolean deposit(double amount) {
 		if (amount > 0) {
 			this.balance += amount;
 			return true;
