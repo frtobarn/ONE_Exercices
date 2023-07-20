@@ -8,7 +8,6 @@ public class TestAccountWhitdrawException {
 		try {
 			account.withdraw(1001);
 		} catch (NotEnoughException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
