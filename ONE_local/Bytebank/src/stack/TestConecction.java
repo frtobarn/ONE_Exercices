@@ -7,8 +7,8 @@ public class TestConecction {
 		try (Connecction connection = new Connecction()) {
 			connection.leerDatos();
 		} catch (IllegalStateException ie) {
-			ie.printStackTrace();
 			System.out.println("Ejecutando catch");
+			ie.printStackTrace();
 		}
 
 		/*
